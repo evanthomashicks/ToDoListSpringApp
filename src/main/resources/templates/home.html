@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<hmtl>
+<body>
+<h1>Todo List</h1>
+<br><br>
+<form action="/add-item" method="post">
+    <input type="text" placeholder="text" name="todotext"/>
+    <button type="submit"?>Add Item</button>
+</form>
+<ol>
+{{#todolist}}
+    <li>{{text}} {{isdone}} <a href="/remove-item?itemID={{id}}">Remove Item</a>  <a href="/toggle-item?itemID={{id}}">Toggle Done</a> </li>
+{{/todolist}}
+</ol>
+</body>
+</hmtl>
