@@ -35,6 +35,18 @@ public class ToDoListController {
         todolist.save(todoitem);
         return "redirect:/";
     }
+//    @RequestMapping(path = "/togglewithcheck", method = RequestMethod.POST)
+//    public String togglecheck(String toggletodo, Integer itemID) {
+//        if (toggletodo !=null)  {
+//            if (itemID !=null) {
+//                ToDoList toDoItem = todolist.findOne(itemID);
+//                toDoItem.isdone = true;
+//                todolist.save(toDoItem);
+//            }
+//            return "redirect:/";
+//        }
+//        return "redirect:/";
+//    }
     @RequestMapping(path = "/remove-item", method = RequestMethod.GET)
     public String deleteItem(Model model,Integer itemID) {
         if (itemID != null) {

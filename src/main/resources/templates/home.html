@@ -7,10 +7,22 @@
     <input type="text" placeholder="text" name="todotext"/>
     <button type="submit"?>Add Item</button>
 </form>
-<ol>
+<ol style="list-style-type:circle">
 {{#todolist}}
-    <li>{{text}} {{isdone}} <a href="/remove-item?itemID={{id}}">Remove Item</a>  <a href="/toggle-item?itemID={{id}}">Toggle Done</a> </li>
+    <li>{{text}}
+        {{#isdone}}
+        <input type="checkbox" checked>
+        {{/isdone}}
+
+        {{^isdone}}
+        <input type="checkbox">
+        {{/isdone}}
+
+
+       <button><a href="/remove-item?itemID={{id}}">Remove</a></button>
+       <button><a href="/toggle-item?itemID={{id}}">Toggle Done</a></button></li>
 {{/todolist}}
 </ol>
 </body>
+
 </hmtl>
